@@ -4,8 +4,8 @@
     "noUncheckedIndexedAccess": true,
     "paths": {
       "app/*": ["./packages/app/*"],
-      "@my/ui/*": ["./packages/ui/*"],
-      "@my/config/*": ["./packages/config/*"]
+      "@starter/ui/*": ["./packages/ui/*"],
+      "@starter/config/*": ["./packages/config/*"]
     }
   },
   "extends": "expo/tsconfig.base"

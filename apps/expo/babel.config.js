@@ -1,5 +1,5 @@
 module.exports = function (api) {
-  api.cache(true)
+  api.cache(true);
   return {
     presets: [['babel-preset-expo', { jsxRuntime: 'automatic' }]],
     plugins: [
@@ -10,8 +10,8 @@ module.exports = function (api) {
           alias: {
             // define aliases to shorten the import paths
             app: '../../packages/app',
-            '@my/ui': '../../packages/ui',
-            '@my/config': '../../packages/config',
+            '@starter/ui': '../../packages/ui',
+            '@starter/config': '../../packages/config',
           },
           extensions: ['.js', '.jsx', '.tsx', '.ios.js', '.android.js'],
         },
@@ -24,7 +24,7 @@ module.exports = function (api) {
             [
               '@tamagui/babel-plugin',
               {
-                components: ['@my/ui', 'tamagui'],
+                components: ['@starter/ui', 'tamagui'],
                 config: './tamagui.config.ts',
               },
             ],
@@ -36,5 +36,5 @@ module.exports = function (api) {
         },
       ],
     ],
-  }
-}
+  };
+};

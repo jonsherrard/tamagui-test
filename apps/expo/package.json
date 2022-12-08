@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@my/config": "*",
+    "@starter/config": "*",
     "app": "*",
     "babel-plugin-module-resolver": "^4.1.0",
     "expo": "~46.0.9",

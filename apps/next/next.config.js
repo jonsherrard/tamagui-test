@@ -1,20 +1,21 @@
 /** @type {import('next').NextConfig} */
-const { withTamagui } = require('@tamagui/next-plugin')
-const withImages = require('next-images')
-const withTM = require('next-transpile-modules')
-const { join } = require('path')
+const { withTamagui } = require('@tamagui/next-plugin');
+const withImages = require('next-images');
+const withTM = require('next-transpile-modules');
+const { join } = require('path');
 
-process.env.IGNORE_TS_CONFIG_PATHS = 'true'
-process.env.TAMAGUI_TARGET = 'web'
-process.env.TAMAGUI_DISABLE_WARN_DYNAMIC_LOAD = '1'
+process.env.IGNORE_TS_CONFIG_PATHS = 'true';
+process.env.TAMAGUI_TARGET = 'web';
+process.env.TAMAGUI_DISABLE_WARN_DYNAMIC_LOAD = '1';
 
 const boolVals = {
   true: true,
   false: false,
-}
+};
 
 const disableExtraction =
-  boolVals[process.env.DISABLE_EXTRACTION] ?? process.env.NODE_ENV === 'development'
+  boolVals[process.env.DISABLE_EXTRACTION] ??
+  process.env.NODE_ENV === 'development';
 
 console.log(`
 
@@ -36,7 +37,7 @@ get tree-shaking and concurrent mode support.
 
 You can remove this log in next.config.js.
 
-`)
+`);
 
 const plugins = [
   withImages,
@@ -46,11 +47,11 @@ const plugins = [
     'expo-linking',
     'expo-constants',
     'expo-modules-core',
-    '@my/config',
+    '@starter/config',
   ]),
   withTamagui({
     config: './tamagui.config.ts',
-    components: ['tamagui', '@my/ui'],
+    components: ['tamagui', '@starter/ui'],
     importsWhitelist: ['constants.js', 'colors.js'],
     logTimings: true,
     disableExtraction,
@@ -58,12 +59,18 @@ const plugins = [
     useReactNativeWebLite: false,
     shouldExtract: (path) => {
       if (path.includes(join('packages', 'app'))) {
-        return true
+        return true;
       }
     },
-    excludeReactNativeWebExports: ['Switch', 'ProgressBar', 'Picker', 'CheckBox', 'Touchable'],
+    excludeReactNativeWebExports: [
+      'Switch',
+      'ProgressBar',
+      'Picker',
+      'CheckBox',
+      'Touchable',
+    ],
   }),
-]
+];
 
 module.exports = function () {
   let config = {
@@ -77,14 +84,14 @@ module.exports = function () {
       scrollRestoration: true,
       legacyBrowsers: false,
     },
-  }
+  };
 
   for (const plugin of plugins) {
     config = {
       ...config,
       ...plugin(config),
-    }
+    };
   }
 
-  return config
-}
+  return config;
+};

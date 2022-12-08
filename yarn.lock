@@ -2263,9 +2263,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@my/config@*, @my/config@workspace:packages/config":
+"@starter/config@*, @starter/config@workspace:packages/config":
   version: 0.0.0-use.local
-  resolution: "@my/config@workspace:packages/config"
+  resolution: "@starter/config@workspace:packages/config"
   dependencies:
     "@tamagui/animations-react-native": 1.0.1-beta.226
     "@tamagui/font-inter": 1.0.1-beta.226
@@ -2274,11 +2274,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@my/ui@*, @my/ui@workspace:packages/ui":
+"@starter/ui@*, @starter/ui@workspace:packages/ui":
   version: 0.0.0-use.local
-  resolution: "@my/ui@workspace:packages/ui"
+  resolution: "@starter/ui@workspace:packages/ui"
   dependencies:
-    "@my/config": "*"
+    "@starter/config": "*"
     "@tamagui/build": ^1.0.1-beta.226
     tamagui: ^1.0.1-beta.226
   languageName: unknown
@@ -4300,8 +4300,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "app@workspace:packages/app"
   dependencies:
-    "@my/config": "*"
-    "@my/ui": "*"
+    "@starter/config": "*"
+    "@starter/ui": "*"
     "@react-navigation/native": ^6.0.11
     "@react-navigation/native-stack": ^6.7.0
     "@tamagui/animations-react-native": 1.0.1-beta.226
@@ -6876,7 +6876,7 @@ __metadata:
     "@babel/core": ^7.17.9
     "@babel/runtime": ^7.18.9
     "@expo/metro-config": ^0.3.21
-    "@my/config": "*"
+    "@starter/config": "*"
     "@tamagui/babel-plugin": 1.0.1-beta.226
     "@types/react": ^18.0.15
     "@types/react-native": ^0.69.5

@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "@my/config",
+  "name": "@starter/config",
   "main": "tamagui.config.ts",
   "private": true,
   "dependencies": {

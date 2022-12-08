@@ -53,7 +53,7 @@ We've added `packages/ui` to show an example of [building your own design system
 
 Note we're following the [design systems guide](https://tamagui.dev/docs/guides/design-systems) and creating our own package for components.
 
-See `packages/ui` named `@my/ui` for how this works.
+See `packages/ui` named `@starter/ui` for how this works.
 
 ## 🆕 Add new dependencies
 
@@ -91,6 +91,6 @@ withTM([
   'expo-constants',
   'expo-modules-core',
   'expo-crypto', // <-- add this or any other native module
-  '@my/config',
-])
+  '@starter/config',
+]);
 ```
