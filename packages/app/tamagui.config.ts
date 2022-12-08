@@ -1,8 +1,8 @@
-import { config } from '@starter/config'
+import { config } from '@my/config'
 
 export type Conf = typeof config
 
-declare module '@starter/ui' {
+declare module '@my/ui' {
   interface TamaguiCustomConfig extends Conf {}
 }
 
